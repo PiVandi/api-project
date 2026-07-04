@@ -19,9 +19,9 @@ class OrderModel(db.Model):
     def __repr__(self):
         return f"Order(content = {self.content}, status = {self.status})"
 
-user_args = regparse.RequestParser()
+user_args = reqparse.RequestParser()
 user_args.add_argument("content", type=str, required=True, help="Content cannot be blank!")
-user_args.add_argument("status", type=str, rquired=True, help="Email cannot be blank!") # Status sollte nicht vom User änderbar sein!
+user_args.add_argument("status", type=str, required=True, help="Email cannot be blank!") # Status sollte nicht vom User änderbar sein!
 
 orderFields = {
     "id":fields.Integer,
@@ -36,14 +36,14 @@ class Orders(Resource):
         orders = OrderModel.query.all()
         return orders
 
-    @marshal_with(orderFields):
-        def post(self):
-            args = user_args.parse_args()
-            order = OrderModel(content=args["content"], status=args["status"])
-            db.session.add(order)
-            db.session.commit()
-            orders.query.all()
-            return order, 201
+    @marshal_with(orderFields)
+    def post(self):
+        args = user_args.parse_args()
+        order = OrderModel(content=args["content"], status=args["status"])
+        db.session.add(order)
+        db.session.commit()
+        orders = OrderModel.query.all()
+        return orders, 201
 
 
 
