@@ -16,7 +16,7 @@ Implementiere eine einfache REST-API gegen das Backend mit mindestens diesen End
  - GET /orders/{orderId}: Gibt Status-Informationen zu einer Bestellung zurück.
  - POST /orders – Erstellt eine neue Bestellung (mit Bestellung-Daten im Request-Body)
  - PUT /orders/{orderId} – Aktualisiert eine bestehende Bestellung (Teil- oder Vollupdate)
- - GET /health: Health-Check der API
+ - GET /health: Health-Check der API -> TODO
 
 ### APIM Konfiguration:
 Integriere die Backend-API in die API-Management-Umgebung.
