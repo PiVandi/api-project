@@ -10,7 +10,6 @@ db = SQLAlchemy(app)
 api = Api(app)
 
 
-
 class OrderModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(80), nullable=False) #Sollte Array sein, -> Später anpassen
@@ -93,34 +92,6 @@ def health():
 api.add_resource(Orders, "/api/orders/")
 api.add_resource(Order, "/api/orders/<int:id>")
 
-"""
-@app.route("/api/get-orders/<order_id>/")
-def get_order(order_id):
-    order_data = {
-            "order_id": order_id,
-            "article:": ["Klopapier", "Säge"],
-            "order_sum": 33
-            }
-    
-    extra = request.args.get("extra")
-    if extra:
-        order_data["extra"] = extra
-
-    return jsonify(order_data), 200
-
-
-@app.route("/api/create-order/", methods=["POST"])
-def create_order():
-   # if request.method == "POST":
-    data = request.get_json()
-    return jsonify(data), 201
-
-
-#@app.route("/update-order/<order-id>", methods=["PUT"])
-
-"""
-#def update_order():
-    
 
 if __name__ == "__main__":
     app.run(debug=True)
