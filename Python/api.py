@@ -12,19 +12,19 @@ api = Api(app)
 
 class OrderModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(80), nullable=False) #Sollte Array sein, -> Später anpassen
+    content = db.Column(db.JSON, nullable=False) #Sollte Array sein, -> Später anpassen
     status = db.Column(db.String(80), nullable=False)
     
     def __repr__(self):
         return f"Order(content = {self.content}, status = {self.status})"
 
 user_args = reqparse.RequestParser()
-user_args.add_argument("content", type=str, required=True, help="Content cannot be blank!")
-user_args.add_argument("status", type=str, required=True, help="Email cannot be blank!") # Status sollte nicht vom User änderbar sein!
+user_args.add_argument("content", type=list,location="json" ,required=True, help="Content cannot be blank!")
+user_args.add_argument("status", type=str, location="json", required=True, help="Email cannot be blank!") # Status sollte nicht vom User änderbar sein!
 
 orderFields = {
     "id":fields.Integer,
-    "content":fields.String,
+    "content":fields.Raw,
     "status":fields.String,
 }
 
