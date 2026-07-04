@@ -1,4 +1,4 @@
-#INFO: https://www.youtube.com/watch?v=z3YMz-Gocmw
+#INFO-Resources: https://www.youtube.com/watch?v=z3YMz-Gocmw; https://www.youtube.com/watch?v=zsYIw6RXjfM
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -95,4 +95,5 @@ api.add_resource(Order, "/api/orders/<int:id>")
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(host="0.0.0.0", port=5000) # Service von überall aus im Container Netzwerk erreichbar
+ 
