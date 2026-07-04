@@ -85,6 +85,10 @@ class Order(Resource):
 def home():
     return "<h1>Hey, This is an API Project!</h1>"
 
+@app.route("/api/health")
+def health():
+    return {"status": "OK"}, 200
+
 
 api.add_resource(Orders, "/api/orders/")
 api.add_resource(Order, "/api/orders/<int:id>")
