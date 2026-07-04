@@ -3,9 +3,10 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api, reqparse, fields, marshal_with, abort
+import os
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 db = SQLAlchemy(app)
 api = Api(app)
 
@@ -94,4 +95,4 @@ api.add_resource(Order, "/api/orders/<int:id>")
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

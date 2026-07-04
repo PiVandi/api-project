@@ -8,6 +8,9 @@ greenlet==3.5.3
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
+psycopg==3.3.4
+psycopg-binary==3.3.4
+psycopg2-binary==2.9.12
 pytz==2026.2
 six==1.17.0
 SQLAlchemy==2.0.51
