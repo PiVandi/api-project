@@ -35,6 +35,7 @@ Aktiviere Monitoring und Logging auf API-Management und Backend-Seite, um Zugrif
 
 ## Commands:
     - source .venv/bin/activate
+    - export DATABASE_URL=postgresql+psycopg://<username>:<password>@localhost:5432/orders     
     - docker run --name <Container_Name> -e POSTGRES_PASSWORD=<password> -p 5432:5432 -d postgres // Postgres  Container hochziehen
       - docker exec -it <Container_Name> psql -U postgres
         - CREATE DATABASE ORDERS;  
