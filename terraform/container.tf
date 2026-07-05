@@ -9,7 +9,7 @@ resource "azurerm_container_app" "api" {
 
     container {
       name  = "api"
-      image = "myimage:latest"
+      image = "${azurerm_container_registry.acr.login_server}/api:latest"
       cpu    = 0.5
       memory = "1Gi"
       
