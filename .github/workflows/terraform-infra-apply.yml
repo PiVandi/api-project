@@ -1,4 +1,4 @@
-name: terraform-deploy
+name: terraform-infra-deploy
 
 on:
   workflow_dispatch:
@@ -6,6 +6,10 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./terraformInfra
 
     steps:
       - name: Checkout
