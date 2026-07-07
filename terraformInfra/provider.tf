@@ -8,7 +8,7 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "1-1e1aca14-playground-sandbox"
+    resource_group_name  = "1-5c79bc69-playground-sandbox"
     storage_account_name = "mystorageaccount23" # Wie wird durch env Var eingeschoben?
     container_name       = "tfstate"
     key                  = "infra.tfstate"

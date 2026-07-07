@@ -1,3 +1,3 @@
 data "azurerm_resource_group" "rg" {
-  name     = "1-1e1aca14-playground-sandbox"
+  name     = "1-5c79bc69-playground-sandbox"
 }

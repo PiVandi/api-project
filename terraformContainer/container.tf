@@ -54,3 +54,19 @@ resource "azurerm_container_app" "api" {
     }
   }
 }
+
+resource "azurerm_api_management_api" "api" {
+  name                = "demo-api-pitt"
+  resource_group_name = data.azurerm_resource_group.rg.name
+  api_management_name = azurerm_api_management.apim.name
+  revision            = "1"
+  display_name        = "Demo API"
+  path                = "api"
+  protocols           = ["https"]
+
+  service_url = azurerm_container_app.api.latest_revision_fqdn
+}
+
+output "api_url" {
+  value = azurerm_container_app.api.latest_revision_fqdn
+}
