@@ -1,3 +1,1 @@
-# TODO eigentlich möchte ich creds nicht hardcoden
-db_password ="pgPitt"
-db_admin = "pgPitt"
+# Wird noch benötigt? -> db admin und user über pipeline env block

@@ -2,6 +2,14 @@ name: terraform-infra-deploy
 
 on:
   workflow_dispatch:
+  env:
+    ARM_TENANT_ID:  ${{secrets.ARM_TENANT_ID}}
+    ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
+    ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID}}
+    ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
+    db_admin: ${{secrets.db_admin}}
+    db_password: ${{secrets.db_password}}
+
 
 jobs:
   terraform:
