@@ -2,9 +2,13 @@
 - Terraform Destroy bauen
 
 ## Authentication
- - kann man API Key ausgeben?
+ - Subscription KEy testen
 
 
 ## Variablen 
  - wie werden environment Variablen injected?
  - Post_Gres URI im Container nicht vergessen -> muss env Variable sein
+
+## Location Problem
+ - wie können Locations dynamisch gesetzt werden?
+ - was sind BPs für Redundanz bzgl. AZs
