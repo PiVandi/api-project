@@ -1,9 +1,5 @@
-data "azurerm_resource_group" "rg" {
-  name     = "1-1e1aca14-playground-sandbox"
-}
-
 resource "azurerm_virtual_network" "vnet" {
-  name                = "demo-vnet"
+  name                = "demo-vnet-pitt"
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
 
